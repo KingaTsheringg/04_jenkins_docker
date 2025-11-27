@@ -1,14 +1,14 @@
-CREATE TABLE `attraction` (
+CREATE TABLE `movies` (
   `id` int(11) NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `detail` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `coverimage` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL
+  `latitude` double NOT NULL,      -- release year
+  `longitude` double NOT NULL      -- rating
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `attraction` (`id`, `name`, `detail`, `coverimage`, `latitude`, `longitude`) VALUES
+INSERT INTO `movies` (`id`, `name`, `detail`, `coverimage`, `latitude`, `longitude`) VALUES
 (1, 'Inception', 'A science-fiction thriller where a skilled thief enters dreams to steal or implant ideas.', 'https://www.joblo.com/wp-content/uploads/2010/05/inception-poster-quad-1.jpg', 2010, 8.8),
 (2, 'The Godfather', 'A classic crime drama following the powerful Corleone family and their struggle for power.', 'https://www.techguide.com.au/wp-content/uploads/2022/01/Godfather50th4K2.jpeg', 1972, 9.2),
 (3, 'The Dark Knight', 'Batman faces the Joker, a criminal mastermind pushing Gotham to chaos.', 'https://wallpaperswide.com/download/the_dark_knight_movie-wallpaper-1280x720.jpg', 2008, 9.0),
@@ -23,9 +23,8 @@ INSERT INTO `attraction` (`id`, `name`, `detail`, `coverimage`, `latitude`, `lon
 (12, 'The Avengers', 'Earth\'s mightiest heroes join forces to stop an alien invasion led by Loki.', 'https://wallpapers.com/images/hd/avengers-endgame-i2bhq95r0dwjkujh.jpg', 2012, 8.0);
 
 
-ALTER TABLE `attraction`
+ALTER TABLE `movies`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE `attraction`
+ALTER TABLE `movies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
